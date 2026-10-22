@@ -1,0 +1,11 @@
+services:
+  marketsphere:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: marketsphere_app
+    restart: unless-stopped
+    ports:
+      - "${PORT:-8080}:80"
+    environment:
+      - NODE_ENV=production
